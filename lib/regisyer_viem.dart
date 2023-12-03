@@ -84,7 +84,7 @@ class _RegisterViewState extends State<RegisterView> {
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => const HomeView()));
+                      MaterialPageRoute(builder: (context) =>  HomeView()));
                 },
                 child: const Text('Login')),
             const SizedBox(
