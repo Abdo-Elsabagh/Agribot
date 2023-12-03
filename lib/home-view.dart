@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
             'It is a device for monitoring moisture levels in the soil',
         reading: 0),
     Sensor(
-        name: 'Soil temperature sensor',
+        name: 'Soil temperature sensor',
         description:
             'They are devices used to measure the temperature of the soil or ground.',
         reading: 0)
@@ -66,7 +66,28 @@ class HomeView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(40)),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 15.0, left: 12),
-                        child: Text('Sensor : ${sensor[indexe]}'),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Sensor : ${sensor[indexe].name}',
+                                style: const TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'description of Sensor : ${sensor[indexe].description}',
+                                style: const TextStyle(fontSize: 16),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Center(
+                                child: Text(
+                                  'Sensor readers at the present time : ${sensor[indexe].reading}',
+                                  style: const TextStyle(fontSize: 18),
+                                ),
+                              )
+                            ]),
                       ),
                     );
                   },
