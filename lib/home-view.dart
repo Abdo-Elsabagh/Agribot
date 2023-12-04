@@ -49,6 +49,7 @@ class HomeView extends StatelessWidget {
         ),
         body: Column(
           children: [
+            
             const Text(
               'Iot Monitoring',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

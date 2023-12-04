@@ -31,7 +31,7 @@ class _RegisterViewState extends State<RegisterView> {
             const SizedBox(
               height: 30,
             ),
-            const Text('Login to your account'),
+            const Text('SignUp to your account'),
             const SizedBox(
               height: 30,
             ),
@@ -90,7 +90,7 @@ class _RegisterViewState extends State<RegisterView> {
                   Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (context) => HomeView()));
                 },
-                child: const Text('Login')),
+                child: const Text('SignUp')),
             const SizedBox(
               height: 20,
             ),
