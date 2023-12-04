@@ -14,12 +14,16 @@ class _RegisterViewState extends State<RegisterView> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Padding(
+            body: SingleChildScrollView(
+      child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 100,
+            ),
             const CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage('assets/2.jpg'),
@@ -84,7 +88,7 @@ class _RegisterViewState extends State<RegisterView> {
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) =>  HomeView()));
+                      MaterialPageRoute(builder: (context) => HomeView()));
                 },
                 child: const Text('Login')),
             const SizedBox(
@@ -109,6 +113,6 @@ class _RegisterViewState extends State<RegisterView> {
           ],
         )),
       ),
-    ));
+    )));
   }
 }

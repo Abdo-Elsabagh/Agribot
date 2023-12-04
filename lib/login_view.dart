@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home-view.dart';
 import 'package:flutter_application_1/regisyer_viem.dart';
@@ -14,12 +16,16 @@ class _LoginViemState extends State<LoginViem> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Padding(
+            body: SingleChildScrollView(
+      child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 120,
+            ),
             const CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage('assets/2.jpg'),
@@ -68,7 +74,7 @@ class _LoginViemState extends State<LoginViem> {
             GestureDetector(
                 onTap: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) =>  HomeView(),
+                    builder: (context) => HomeView(),
                   ));
                 },
                 child: Container(
@@ -105,6 +111,6 @@ class _LoginViemState extends State<LoginViem> {
           ],
         )),
       ),
-    ));
+    )));
   }
 }
