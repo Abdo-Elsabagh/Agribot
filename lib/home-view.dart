@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/account_data.dart';
+import 'package:flutter_application_1/scanning.dart';
 import 'package:flutter_application_1/sensor.dart';
 
 class HomeView extends StatelessWidget {
@@ -47,9 +48,15 @@ class HomeView extends StatelessWidget {
                 ))
           ],
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const Scanning()));
+          },
+          child: const Icon(Icons.add),
+        ),
         body: Column(
           children: [
-            
             const Text(
               'Iot Monitoring',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
