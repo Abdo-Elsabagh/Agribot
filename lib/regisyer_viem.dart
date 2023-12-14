@@ -23,7 +23,7 @@ class _RegisterViewState extends State<RegisterView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 100,
+              height: 80,
             ),
             const CircleAvatar(
               radius: 50,
@@ -32,7 +32,10 @@ class _RegisterViewState extends State<RegisterView> {
             const SizedBox(
               height: 30,
             ),
-            const Text('SignUp to your account'),
+            Text(
+              'SignUp to your account',
+              style: TextStyle(fontSize: 20, color: Colors.teal[400]),
+            ),
             const SizedBox(
               height: 30,
             ),
@@ -47,7 +50,7 @@ class _RegisterViewState extends State<RegisterView> {
                       borderSide: const BorderSide(color: Colors.black)),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(color: Colors.greenAccent))),
+                      borderSide: const BorderSide(color: Colors.teal))),
             ),
             const SizedBox(
               height: 30,
@@ -59,7 +62,7 @@ class _RegisterViewState extends State<RegisterView> {
                   //hintText: 'Enter y email',
                   prefixIcon: const Icon(Icons.email),
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.greenAccent),
+                      borderSide: const BorderSide(color: Colors.teal),
                       borderRadius: BorderRadius.circular(20)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.black),
@@ -81,12 +84,16 @@ class _RegisterViewState extends State<RegisterView> {
                       borderSide: const BorderSide(color: Colors.black)),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(color: Colors.greenAccent))),
+                      borderSide: const BorderSide(color: Colors.teal))),
             ),
             const SizedBox(
               height: 20,
             ),
             ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.teal[400], // لون النص
+                ),
                 onPressed: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (context) => const HomeView()));
@@ -105,9 +112,9 @@ class _RegisterViewState extends State<RegisterView> {
                         builder: (context) => const LoginViem(),
                       ));
                     },
-                    child: const Text(
+                    child: Text(
                       'Login Now',
-                      style: TextStyle(color: Colors.greenAccent),
+                      style: TextStyle(color: Colors.teal[400]),
                     ))
               ],
             )

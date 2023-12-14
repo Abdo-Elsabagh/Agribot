@@ -34,7 +34,10 @@ class _LoginViemState extends State<LoginViem> {
             const SizedBox(
               height: 30,
             ),
-            const Text('Login to your account'),
+            Text(
+              'Welocme to Agribot',
+              style: TextStyle(fontSize: 20, color: Colors.teal[400]),
+            ),
             const SizedBox(
               height: 30,
             ),
@@ -45,7 +48,7 @@ class _LoginViemState extends State<LoginViem> {
                   //hintText: 'Enter y email',
                   prefixIcon: const Icon(Icons.email),
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.greenAccent),
+                      borderSide: const BorderSide(color: Colors.teal),
                       borderRadius: BorderRadius.circular(20)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.black),
@@ -67,7 +70,7 @@ class _LoginViemState extends State<LoginViem> {
                       borderSide: const BorderSide(color: Colors.black)),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(color: Colors.greenAccent))),
+                      borderSide: const BorderSide(color: Colors.teal))),
             ),
             const SizedBox(
               height: 20,
@@ -84,7 +87,7 @@ class _LoginViemState extends State<LoginViem> {
                   height: 40,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Colors.greenAccent),
+                      color: Colors.teal[400]),
                   child: const Text(
                     'Login',
                     style: TextStyle(
@@ -103,9 +106,9 @@ class _LoginViemState extends State<LoginViem> {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (context) => const RegisterView()));
                     },
-                    child: const Text(
+                    child: Text(
                       'Create one!',
-                      style: TextStyle(color: Colors.greenAccent),
+                      style: TextStyle(color: Colors.teal[400]),
                     ))
               ],
             )

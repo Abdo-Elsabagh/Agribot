@@ -9,12 +9,13 @@ class Account extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[400],
       appBar: AppBar(
-        backgroundColor: Colors.grey[400],
+        backgroundColor: Colors.teal[400],
         elevation: 0,
         centerTitle: true,
         title: const Text(
           'My Profile',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+          style: TextStyle(
+              fontSize: 30, fontWeight: FontWeight.w900, color: Colors.white),
         ),
       ),
       body: Center(
@@ -23,7 +24,7 @@ class Account extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: EdgeInsets.only(top: 15.0),
+                padding: EdgeInsets.only(top: 60.0),
                 child: Center(
                   child: CircleAvatar(
                     radius: 70,
@@ -81,24 +82,27 @@ class Account extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const LoginViem(),
-                  ));
-                },
-                child: Center(
-                  child: Container(
-                    width: 200,
-                    alignment: Alignment.center,
-                    height: 40,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.green),
-                    child: const Text(
-                      'LOG OUT',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const LoginViem(),
+                    ));
+                  },
+                  child: Center(
+                    child: Container(
+                      width: 200,
+                      alignment: Alignment.center,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.teal[400]),
+                      child: const Text(
+                        'LOG OUT',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ),

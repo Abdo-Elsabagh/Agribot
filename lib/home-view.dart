@@ -39,11 +39,20 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: Colors.black,
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.greenAccent,
-          leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+          backgroundColor: Colors.teal[400],
+          leading: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.white,
+              )),
           title: const Text(
             'sensor',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 25,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           actions: [
             IconButton(
@@ -55,6 +64,7 @@ class _HomeViewState extends State<HomeView> {
                 icon: const Icon(
                   Icons.account_circle_outlined,
                   size: 35,
+                  color: Colors.white,
                 ))
           ],
         ),
@@ -68,8 +78,11 @@ class _HomeViewState extends State<HomeView> {
         body: Column(
           children: [
             const Text(
-              'Iot Monitoring',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              'IOT  Monitoring',
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             SizedBox(
               height: 225,
@@ -209,16 +222,16 @@ class _HomeViewState extends State<HomeView> {
                 ],
               ),
             ),
-            CircularPercentIndicator(
-              radius: 150.0, // قطر الدائرة
-              lineWidth: 12.0, // عرض الخط الذي يحيط بالدائرة
-              percent: percentage, // النسبة المئوية
-              center: Text("${(percentage * 100).toStringAsFixed(1)}%",
-                  style: const TextStyle(fontSize: 20.0)),
-              circularStrokeCap: CircularStrokeCap.round,
-              backgroundColor: Colors.white,
-              progressColor: Colors.green,
-            ),
+            // CircularPercentIndicator(
+            //   radius: 150.0, // قطر الدائرة
+            //   lineWidth: 12.0, // عرض الخط الذي يحيط بالدائرة
+            //   percent: percentage, // النسبة المئوية
+            //   center: Text("${(percentage * 100).toStringAsFixed(1)}%",
+            //       style: const TextStyle(fontSize: 20.0)),
+            //   circularStrokeCap: CircularStrokeCap.round,
+            //   backgroundColor: Colors.white,
+            //   progressColor: Colors.green,
+            // ),
             Expanded(
                 child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -228,7 +241,7 @@ class _HomeViewState extends State<HomeView> {
                       alignment: Alignment.topLeft,
                       height: 200,
                       decoration: BoxDecoration(
-                          color: Colors.greenAccent,
+                          color: Colors.teal[100],
                           borderRadius: BorderRadius.circular(40)),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 15.0, left: 12),
