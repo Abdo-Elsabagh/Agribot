@@ -36,6 +36,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.greenAccent,
@@ -70,6 +71,144 @@ class _HomeViewState extends State<HomeView> {
               'Iot Monitoring',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
+            SizedBox(
+              height: 225,
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: Row(children: [
+                      Expanded(
+                        child: Container(
+                            height: 200,
+                            decoration: BoxDecoration(
+                                color: Colors.grey[900],
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Center(
+                                child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'Ph sensor',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                CircularPercentIndicator(
+                                  radius: 140.0, // قطر الدائرة
+                                  lineWidth:
+                                      12.0, // عرض الخط الذي يحيط بالدائرة
+                                  percent: percentage, // النسبة المئوية
+                                  center: Text(
+                                      "${(percentage * 100).toStringAsFixed(1)}%",
+                                      style: TextStyle(
+                                          fontSize: 20.0,
+                                          color: Colors.greenAccent.shade400)),
+                                  circularStrokeCap: CircularStrokeCap.round,
+                                  backgroundColor: Colors.grey,
+                                  progressColor: Colors.greenAccent[400],
+                                ),
+                              ],
+                            ))),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                          child: Column(
+                        children: [
+                          Container(
+                            height: 65,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[900],
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'TEMPERATURE',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                                    Text(
+                                      '73.1 F',
+                                      style: TextStyle(
+                                          color: Colors.redAccent[400],
+                                          fontSize: 18),
+                                    )
+                                  ]),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            height: 65,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[900],
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'HUMDITY',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                                    Text(
+                                      '45.8%',
+                                      style: TextStyle(
+                                          color: Colors.deepPurple[300],
+                                          fontSize: 18),
+                                    )
+                                  ]),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            height: 65,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[900],
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'SUNLIGHT',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                                    Text(
+                                      '236.1',
+                                      style: TextStyle(
+                                          color: Colors.amber[300],
+                                          fontSize: 18),
+                                    )
+                                  ]),
+                            ),
+                          ),
+                        ],
+                      ))
+                    ]),
+                  )
+                ],
+              ),
+            ),
             CircularPercentIndicator(
               radius: 150.0, // قطر الدائرة
               lineWidth: 12.0, // عرض الخط الذي يحيط بالدائرة
@@ -77,8 +216,8 @@ class _HomeViewState extends State<HomeView> {
               center: Text("${(percentage * 100).toStringAsFixed(1)}%",
                   style: const TextStyle(fontSize: 20.0)),
               circularStrokeCap: CircularStrokeCap.round,
-              backgroundColor: Colors.grey,
-              progressColor: Colors.blue,
+              backgroundColor: Colors.white,
+              progressColor: Colors.green,
             ),
             Expanded(
                 child: Padding(
