@@ -44,10 +44,10 @@ class _RegisterViewState extends State<RegisterView> {
                   prefixIcon: const Icon(Icons.email_rounded),
                   focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(color: Colors.blue)),
+                      borderSide: const BorderSide(color: Colors.black)),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(color: Colors.blue))),
+                      borderSide: const BorderSide(color: Colors.greenAccent))),
             ),
             const SizedBox(
               height: 30,
@@ -59,7 +59,7 @@ class _RegisterViewState extends State<RegisterView> {
                   //hintText: 'Enter y email',
                   prefixIcon: const Icon(Icons.email),
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.blue),
+                      borderSide: const BorderSide(color: Colors.greenAccent),
                       borderRadius: BorderRadius.circular(20)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.black),
@@ -81,7 +81,7 @@ class _RegisterViewState extends State<RegisterView> {
                       borderSide: const BorderSide(color: Colors.black)),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(color: Colors.blue))),
+                      borderSide: const BorderSide(color: Colors.greenAccent))),
             ),
             const SizedBox(
               height: 20,
@@ -107,7 +107,7 @@ class _RegisterViewState extends State<RegisterView> {
                     },
                     child: const Text(
                       'Login Now',
-                      style: TextStyle(color: Colors.blue),
+                      style: TextStyle(color: Colors.greenAccent),
                     ))
               ],
             )

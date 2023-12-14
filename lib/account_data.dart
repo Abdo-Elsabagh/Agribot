@@ -94,7 +94,7 @@ class Account extends StatelessWidget {
                     height: 40,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Colors.blue),
+                        color: Colors.green),
                     child: const Text(
                       'LOG OUT',
                       style: TextStyle(

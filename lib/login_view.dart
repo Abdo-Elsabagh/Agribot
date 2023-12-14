@@ -45,7 +45,7 @@ class _LoginViemState extends State<LoginViem> {
                   //hintText: 'Enter y email',
                   prefixIcon: const Icon(Icons.email),
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.blue),
+                      borderSide: const BorderSide(color: Colors.greenAccent),
                       borderRadius: BorderRadius.circular(20)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.black),
@@ -67,7 +67,7 @@ class _LoginViemState extends State<LoginViem> {
                       borderSide: const BorderSide(color: Colors.black)),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(color: Colors.blue))),
+                      borderSide: const BorderSide(color: Colors.greenAccent))),
             ),
             const SizedBox(
               height: 20,
@@ -84,7 +84,7 @@ class _LoginViemState extends State<LoginViem> {
                   height: 40,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Colors.blue),
+                      color: Colors.greenAccent),
                   child: const Text(
                     'Login',
                     style: TextStyle(
@@ -105,7 +105,7 @@ class _LoginViemState extends State<LoginViem> {
                     },
                     child: const Text(
                       'Create one!',
-                      style: TextStyle(color: Colors.blue),
+                      style: TextStyle(color: Colors.greenAccent),
                     ))
               ],
             )

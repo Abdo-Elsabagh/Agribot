@@ -7,8 +7,6 @@ import 'package:flutter_application_1/scanning.dart';
 import 'package:flutter_application_1/sensor.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
-
-
 class Test extends StatelessWidget {
   const Test({Key? key}) : super(key: key);
 
@@ -52,7 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
     _scrollController = ScrollController();
   }
 
-  
   List<Sensor> sensor = [
     Sensor(
         name: 'Ph sensor',
@@ -97,10 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      appBar: AppBar(
-        centerTitle: true,
-          backgroundColor: Colors.blue,
+        key: _scaffoldKey,
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.greenAccent,
           leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
           title: const Text(
             'sensor',
@@ -118,75 +115,74 @@ class _MyHomePageState extends State<MyHomePage> {
                   size: 35,
                 ))
           ],
-      ),
-      floatingActionButton: FloatingActionButton(
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.greenAccent,
           onPressed: () {
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => const Scanning()));
           },
           child: const Icon(Icons.add),
         ),
-      body:Column(
-          children: [
-            const Text(
-              'Iot Monitoring',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-
-       Expanded(
-         child: LiquidPullToRefresh(
-          key: _refreshIndicatorKey,
-          onRefresh: _handleRefresh,
-          showChildOpacityTransition: false,
-          child: StreamBuilder<int>(
-            stream: counterStream,
-            builder: (context, snapshot) {
-              return ListView.separated(
-                 itemBuilder: (context, indexe) {
-                    return Container(
-                      alignment: Alignment.topLeft,
-                      height: 200,
-                      decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(40)),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 15.0, left: 12),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Sensor : ${sensor[indexe].name}',
-                                style: const TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                'description of Sensor : ${sensor[indexe].description}',
-                                style: const TextStyle(fontSize: 16),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Center(
-                                child: Text(
-                                  'Sensor readers at the present time : ${sensor[indexe].reading}',
-                                  style: const TextStyle(fontSize: 18),
-                                ),
-                              )
-                            ]),
-                      ),
-                    );
-                  },
-                  separatorBuilder: (context, indexe) {
-                    return const SizedBox(
-                      height: 20,
-                    );
-                  },
-                  itemCount: sensor.length
-              );
-            },
+        body: Column(children: [
+          const Text(
+            'Iot Monitoring',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-               ),
-       ),
-   ] ));
+          Expanded(
+            child: LiquidPullToRefresh(
+              key: _refreshIndicatorKey,
+              onRefresh: _handleRefresh,
+              showChildOpacityTransition: false,
+              child: StreamBuilder<int>(
+                stream: counterStream,
+                builder: (context, snapshot) {
+                  return ListView.separated(
+                      itemBuilder: (context, indexe) {
+                        return Container(
+                          alignment: Alignment.topLeft,
+                          height: 200,
+                          decoration: BoxDecoration(
+                              color: Colors.greenAccent,
+                              borderRadius: BorderRadius.circular(40)),
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 15.0, left: 12),
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Sensor : ${sensor[indexe].name}',
+                                    style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    'description of Sensor : ${sensor[indexe].description}',
+                                    style: const TextStyle(fontSize: 16),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      'Sensor readers at the present time : ${sensor[indexe].reading}',
+                                      style: const TextStyle(fontSize: 18),
+                                    ),
+                                  )
+                                ]),
+                          ),
+                        );
+                      },
+                      separatorBuilder: (context, indexe) {
+                        return const SizedBox(
+                          height: 20,
+                        );
+                      },
+                      itemCount: sensor.length);
+                },
+              ),
+            ),
+          ),
+        ]));
   }
 }
