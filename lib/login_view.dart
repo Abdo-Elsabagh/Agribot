@@ -75,7 +75,7 @@ class _LoginViemState extends State<LoginViem> {
             GestureDetector(
                 onTap: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const Test(),
+                    builder: (context) => const HomeView(),
                   ));
                 },
                 child: Container(

@@ -3,9 +3,18 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/account_data.dart';
 import 'package:flutter_application_1/scanning.dart';
 import 'package:flutter_application_1/sensor.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
-class HomeView extends StatelessWidget {
-  HomeView({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  @override
+  double percentage = 0.9;
   List<Sensor> sensor = [
     Sensor(
         name: 'Ph sensor',
@@ -29,7 +38,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.greenAccent,
           leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
           title: const Text(
             'sensor',
@@ -61,6 +70,16 @@ class HomeView extends StatelessWidget {
               'Iot Monitoring',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
+            CircularPercentIndicator(
+              radius: 150.0, // قطر الدائرة
+              lineWidth: 12.0, // عرض الخط الذي يحيط بالدائرة
+              percent: percentage, // النسبة المئوية
+              center: Text("${(percentage * 100).toStringAsFixed(1)}%",
+                  style: const TextStyle(fontSize: 20.0)),
+              circularStrokeCap: CircularStrokeCap.round,
+              backgroundColor: Colors.grey,
+              progressColor: Colors.blue,
+            ),
             Expanded(
                 child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -70,7 +89,7 @@ class HomeView extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       height: 200,
                       decoration: BoxDecoration(
-                          color: Colors.green,
+                          color: Colors.greenAccent,
                           borderRadius: BorderRadius.circular(40)),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 15.0, left: 12),

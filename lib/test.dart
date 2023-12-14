@@ -6,6 +6,7 @@ import 'package:flutter_application_1/account_data.dart';
 import 'package:flutter_application_1/scanning.dart';
 import 'package:flutter_application_1/sensor.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class Test extends StatelessWidget {
   const Test({Key? key}) : super(key: key);
@@ -50,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _scrollController = ScrollController();
   }
 
+  double percentage = 0.7;
   List<Sensor> sensor = [
     Sensor(
         name: 'Ph sensor',
@@ -128,6 +130,16 @@ class _MyHomePageState extends State<MyHomePage> {
           const Text(
             'Iot Monitoring',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          CircularPercentIndicator(
+            radius: 150.0, // قطر الدائرة
+            lineWidth: 12.0, // عرض الخط الذي يحيط بالدائرة
+            percent: percentage, // النسبة المئوية
+            center: Text("${(percentage * 100).toStringAsFixed(1)}%",
+                style: const TextStyle(fontSize: 20.0)),
+            circularStrokeCap: CircularStrokeCap.round,
+            backgroundColor: Colors.grey,
+            progressColor: Colors.blue,
           ),
           Expanded(
             child: LiquidPullToRefresh(
