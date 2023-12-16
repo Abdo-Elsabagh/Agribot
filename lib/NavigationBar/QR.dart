@@ -9,10 +9,10 @@ class Qr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal[700],
+      backgroundColor: Colors.grey[400],
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.grey[500],
+        backgroundColor: Colors.teal[400],
         title: Text(
             'GPS QR Code',
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,),
