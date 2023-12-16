@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/NavigationBar/NavigationBar.dart';
 import 'package:flutter_application_1/home-view.dart';
 import 'package:flutter_application_1/regisyer_viem.dart';
 import 'package:flutter_application_1/test.dart';
@@ -78,7 +79,7 @@ class _LoginViemState extends State<LoginViem> {
             GestureDetector(
                 onTap: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const HomeView(),
+                    builder: (context) =>  NavigationScreen(),
                   ));
                 },
                 child: Container(
