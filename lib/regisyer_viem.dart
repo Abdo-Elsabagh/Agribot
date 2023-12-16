@@ -29,7 +29,7 @@ class _RegisterViewState extends State<RegisterView> {
             ),
             const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/2.jpg'),
+              backgroundImage: AssetImage('assets/4.jpg'),
             ),
             const SizedBox(
               height: 30,
@@ -98,7 +98,7 @@ class _RegisterViewState extends State<RegisterView> {
                 ),
                 onPressed: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) =>  NavigationScreen()));
+                      builder: (context) => NavigationScreen()));
                 },
                 child: const Text('SignUp')),
             const SizedBox(

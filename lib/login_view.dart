@@ -30,7 +30,7 @@ class _LoginViemState extends State<LoginViem> {
             ),
             const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/2.jpg'),
+              backgroundImage: AssetImage('assets/4.jpg'),
             ),
             const SizedBox(
               height: 30,
