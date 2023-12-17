@@ -3,10 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-
-
-
-
 class CameraGalleryPage extends StatefulWidget {
   @override
   _CameraGalleryPageState createState() => _CameraGalleryPageState();
@@ -36,22 +32,33 @@ class _CameraGalleryPageState extends State<CameraGalleryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[400],
       appBar: AppBar(
+        backgroundColor: Colors.teal[400],
+        elevation: 0,
+        centerTitle: true,
         title: Text('Camera and Gallery'),
       ),
-      body: Column(
-        children: [
-          Center(
-            child: _image == null
-                ? Text('No image selected.')
-                : Image.file(_image!),
-          ),
-          SizedBox(height: 16),
-          ElevatedButton(
-            onPressed: _analyzeImage,
-            child: Text('Analyze Image'),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: _image == null
+                  ? Text(
+                      'No image selected.',
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    )
+                  : Image.file(_image!),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: _analyzeImage,
+              child: Text('Analyze Image'),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -68,7 +75,7 @@ class _CameraGalleryPageState extends State<CameraGalleryPage> {
             child: Icon(Icons.photo),
           ),
         ],
-     ),
-);
-}
+      ),
+    );
+  }
 }
