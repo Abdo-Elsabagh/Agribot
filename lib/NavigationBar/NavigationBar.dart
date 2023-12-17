@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/NavigationBar/Mater.dart';
 import 'package:flutter_application_1/NavigationBar/QR.dart';
 import 'package:flutter_application_1/NavigationBar/car.dart';
 import 'package:flutter_application_1/home-view.dart';
@@ -12,11 +13,7 @@ class NavigationScreen extends StatefulWidget {
 class _NavigationScreenState extends State<NavigationScreen> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [
-    HomeView(),
-    Car(),
-    Qr()
-  ];
+  final List<Widget> _pages = [HomeView(), Car(), Qr(),];
 
   @override
   Widget build(BuildContext context) {

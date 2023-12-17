@@ -31,6 +31,7 @@ class _NavigationExampleState extends State<NavigationExample> {
     final ThemeData theme = Theme.of(context);
     return Scaffold(
       bottomNavigationBar: NavigationBar(
+        backgroundColor: Colors.grey,
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
@@ -43,6 +44,10 @@ class _NavigationExampleState extends State<NavigationExample> {
             selectedIcon: Icon(Icons.home),
             icon: Icon(Icons.home_outlined),
             label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Badge(child: Icon(Icons.notifications_sharp)),
+            label: 'Notifications',
           ),
           NavigationDestination(
             icon: Badge(child: Icon(Icons.notifications_sharp)),
