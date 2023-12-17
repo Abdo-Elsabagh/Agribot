@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_application_1/Scanning3.dart';
 import 'package:flutter_application_1/account_data.dart';
-import 'package:flutter_application_1/scanning.dart';
+import 'package:flutter_application_1/add_figma/scanning.dart';
+import 'package:flutter_application_1/add_figma/scanning2.dart';
 import 'package:flutter_application_1/sensor.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
@@ -71,7 +73,7 @@ class _HomeViewState extends State<HomeView> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const Scanning()));
+                MaterialPageRoute(builder: (context) => CameraGalleryPage()));
           },
           child: const Icon(Icons.add),
         ),

@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:charts_painter/chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/account_data.dart';
-import 'package:flutter_application_1/scanning.dart';
+import 'package:flutter_application_1/add_figma/scanning.dart';
 import 'package:flutter_application_1/sensor.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:percent_indicator/percent_indicator.dart';
