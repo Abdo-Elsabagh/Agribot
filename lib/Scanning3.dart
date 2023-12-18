@@ -48,7 +48,7 @@ class _CameraGalleryPageState extends State<CameraGalleryPage> {
           children: [
             Center(
               child: _image == null
-                  ? Text(
+                  ? const Text(
                       'No image selected.',
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
