@@ -37,7 +37,10 @@ class _CameraGalleryPageState extends State<CameraGalleryPage> {
         backgroundColor: Colors.teal[400],
         elevation: 0,
         centerTitle: true,
-        title: Text('Camera and Gallery'),
+        title: const Text(
+          'Camera and Gallery',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Center(
         child: Column(
