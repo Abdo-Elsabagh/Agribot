@@ -6,7 +6,7 @@ class SoundIndicatorScreen extends StatefulWidget {
 }
 
 class _SoundIndicatorScreenState extends State<SoundIndicatorScreen> {
-  double _soundLevel = 0.5;
+  double _soundLevel = 0.0;
   double _minValue = 0;
   double _maxValue = 200;
 
