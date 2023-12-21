@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/NavigationBar/NavigationBar.dart';
 import 'package:flutter_application_1/NavigationBar/NavigationBar.dart';
+import 'package:flutter_application_1/NavigationBar/NavigationExample.dart';
 import 'package:flutter_application_1/home-view.dart';
 import 'package:flutter_application_1/login_view.dart';
 import 'package:flutter_application_1/test.dart';
@@ -98,7 +99,7 @@ class _RegisterViewState extends State<RegisterView> {
                 ),
                 onPressed: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => NavigationScreen()));
+                      builder: (context) => NavigationExample2()));
                 },
                 child: const Text('SignUp')),
             const SizedBox(
