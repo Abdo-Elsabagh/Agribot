@@ -2,10 +2,6 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-
-
-
-
 class Car extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,33 +12,29 @@ class Car extends StatelessWidget {
         backgroundColor: Colors.teal.shade400,
         title: Text(
           'Pesticide Robot',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.normal),
+          style: TextStyle(
+              fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
         ),
-
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-
         children: [
           ElevatedButton(
             onPressed: () {
               print('ON button pressed');
             },
-            style:ElevatedButton.styleFrom(
+            style: ElevatedButton.styleFrom(
               backgroundColor: Colors.greenAccent.shade400,
-            ) ,
-
+            ),
             child: const Text(
               'ON - Open Spray',
               style: TextStyle(
-                color:Colors.white,
+                color: Colors.white,
                 fontSize: 20.0,
               ),
             ),
           ),
-          SizedBox(
-              height: 80.0
-          ),
+          SizedBox(height: 80.0),
           ElevatedButton(
             onPressed: () {
               print('OFF button pressed');
@@ -50,11 +42,10 @@ class Car extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red.shade500, // لون الخلفية
             ),
-
             child: const Text(
               'OFF - Close Spray',
               style: TextStyle(
-                color:Colors.white,
+                color: Colors.white,
                 fontSize: 20.0,
               ),
             ),
@@ -65,21 +56,31 @@ class Car extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ArrowButton(imagePath: 'assets/up_arrow.PNG', onPressed: () => _handleArrowPress('Up')),
+              ArrowButton(
+                  imagePath: 'assets/up_arrow.PNG',
+                  onPressed: () => _handleArrowPress('Up')),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ArrowButton(imagePath: 'assets/left_arrow.PNG', onPressed: () => _handleArrowPress('Left')),
-              StopButton(imagePath: 'assets/stop_button.PNG', onPressed: () => _handleStopPress()),
-              ArrowButton(imagePath: 'assets/right_arrow.PNG', onPressed: () => _handleArrowPress('Right')),
+              ArrowButton(
+                  imagePath: 'assets/left_arrow.PNG',
+                  onPressed: () => _handleArrowPress('Left')),
+              StopButton(
+                  imagePath: 'assets/stop_button.PNG',
+                  onPressed: () => _handleStopPress()),
+              ArrowButton(
+                  imagePath: 'assets/right_arrow.PNG',
+                  onPressed: () => _handleArrowPress('Right')),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ArrowButton(imagePath: 'assets/down_arrow.PNG', onPressed: () => _handleArrowPress('Down')),
+              ArrowButton(
+                  imagePath: 'assets/down_arrow.PNG',
+                  onPressed: () => _handleArrowPress('Down')),
             ],
           ),
         ],
@@ -141,4 +142,3 @@ class StopButton extends StatelessWidget {
     );
   }
 }
-
