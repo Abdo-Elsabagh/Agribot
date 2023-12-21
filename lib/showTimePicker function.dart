@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 
 /// Flutter code sample for [showTimePicker].
 
-void main() {
-  runApp(const ShowTimePickerApp());
-}
-
 class ShowTimePickerApp extends StatefulWidget {
   const ShowTimePickerApp({super.key});
 
@@ -32,6 +28,7 @@ class _ShowTimePickerAppState extends State<ShowTimePickerApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.light(useMaterial3: useMaterial3),
       darkTheme: ThemeData.dark(useMaterial3: useMaterial3),
       themeMode: themeMode,

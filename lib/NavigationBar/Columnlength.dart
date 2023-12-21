@@ -15,8 +15,12 @@ class _SoundIndicatorScreenState extends State<SoundIndicatorScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[400],
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.teal[400],
-        title: Text('Sound Indicator'),
+        title: Text(
+          'Sound Indicator',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

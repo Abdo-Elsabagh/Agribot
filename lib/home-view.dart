@@ -5,6 +5,7 @@ import 'package:flutter_application_1/account_data.dart';
 import 'package:flutter_application_1/add_figma/scanning.dart';
 import 'package:flutter_application_1/add_figma/scanning2.dart';
 import 'package:flutter_application_1/sensor.dart';
+import 'package:flutter_application_1/showTimePicker%20function.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeView extends StatefulWidget {
@@ -43,7 +44,11 @@ class _HomeViewState extends State<HomeView> {
           centerTitle: true,
           backgroundColor: Colors.teal[400],
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const ShowTimePickerApp(),
+                  ));
+              },
               icon: const Icon(
                 Icons.menu,
                 color: Colors.white,
