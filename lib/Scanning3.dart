@@ -1,18 +1,29 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
 
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:tflite/tflite.dart';
 
 class CameraGalleryPage extends StatefulWidget {
   @override
   _CameraGalleryPageState createState() => _CameraGalleryPageState();
 }
-
-class _CameraGalleryPageState extends State<CameraGalleryPage> {
   File? _image;
   final picker = ImagePicker();
+ 
+  var output ;
+  var model;
+ 
 
-  Future<void> _getImage(ImageSource source) async {
+  Future<void> _analyzemage()async {
+    // قد ترغب في تحليل الصورة هنا واتخاذ الإجراءات اللازمة
+    
+  }
+class _CameraGalleryPageState extends State<CameraGalleryPage> {
+ Future<void> _getImage(ImageSource source) async {
     final pickedFile = await picker.pickImage(source: source);
 
     setState(() {
@@ -24,25 +35,16 @@ class _CameraGalleryPageState extends State<CameraGalleryPage> {
     });
   }
 
-  void _analyzeImage() {
-    // قد ترغب في تحليل الصورة هنا واتخاذ الإجراءات اللازمة
-    print('Analyzing image...');
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // loadModel();
   }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[400],
-      appBar: AppBar(
-        backgroundColor: Colors.teal[400],
-        elevation: 0,
-        centerTitle: true,
-        title: const Text(
-          'Camera and Gallery',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-      ),
-      body: Center(
+    return  
+    Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -53,32 +55,74 @@ class _CameraGalleryPageState extends State<CameraGalleryPage> {
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     )
-                  : Image.file(_image!),
+                  : Container(
+                    width: 250,
+                    height: 200,
+                    child: Image.file(_image!)),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: _analyzeImage,
-              child: Text('Analyze Image'),
+              onPressed: ()async{
+                try{
+                   if(_image!=null){
+                output = await Tflite.runModelOnImage(// use model on image
+                  path: _image!.path, // path of image to enter the model
+                    imageMean: 127.5,
+                  imageStd: 127.5,
+                 numResults: 4,
+                threshold: 0.1,
+);
+// show result of the model 
+     AwesomeDialog(
+      context: context,title: 'Your result: ',desc: '${output![0]['label']}',
+      dialogType: DialogType.noHeader
+      ,btnOk: ElevatedButton(
+        onPressed: () { Navigator.pop(context); },
+        child: const Text('Ok'),)).show();
+    // print(output![0]);
+
+}
+  else{
+    AwesomeDialog(
+      context: context,title: 'Error',desc: 'Add image first',
+      dialogType: DialogType.error
+      ,btnOk: ElevatedButton(
+        onPressed: () { Navigator.pop(context); },
+        child: const Text('Ok'),)).show();
+  }
+          
+            
+               }
+               catch(e){
+                 AwesomeDialog(
+      context: context,title: 'Error',desc: e.toString(),
+      dialogType: DialogType.error
+      ,btnOk: ElevatedButton(
+        onPressed: () { Navigator.pop(context); },
+        child: const Text('Ok'),)).show();
+               } },
+              child: const Text('Analyze Image'),
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
+            const SizedBox(height: 10,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [FloatingActionButton(
             onPressed: () => _getImage(ImageSource.camera),
             tooltip: 'Open Camera',
-            child: Icon(Icons.camera),
-          ),
-          SizedBox(height: 16),
+            child: const Icon(Icons.camera),
+          ),const SizedBox(width: 16),
           FloatingActionButton(
             onPressed: () => _getImage(ImageSource.gallery),
             tooltip: 'Open Gallery',
-            child: Icon(Icons.photo),
+            child: const Icon(Icons.photo),
           ),
-        ],
-      ),
-    );
+          ],
+            ),
+           
+
+          
+          ],
+        ));
+      
   }
 }

@@ -7,6 +7,7 @@ import 'package:flutter_application_1/add_figma/scanning2.dart';
 import 'package:flutter_application_1/sensor.dart';
 import 'package:flutter_application_1/showTimePicker%20function.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:tflite/tflite.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -76,9 +77,14 @@ class _HomeViewState extends State<HomeView> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => CameraGalleryPage()));
+          onPressed: (){
+            
+             // ignore: use_build_context_synchronously
+             showModalBottomSheet(
+              
+               context: context, builder: (context) => CameraGalleryPage(),);
+            // Navigator.of(context).push(
+                // MaterialPageRoute(builder: (context) => CameraGalleryPage()));
           },
           child: const Icon(Icons.add),
         ),

@@ -3,7 +3,7 @@ import 'package:flutter_application_1/NavigationBar/Mater.dart';
 import 'package:flutter_application_1/NavigationBar/QR.dart';
 import 'package:flutter_application_1/NavigationBar/car.dart';
 import 'package:flutter_application_1/home-view.dart';
-import 'package:flutter_application_1/login_view.dart';
+import 'package:flutter_application_1/screens/login_in/login_view.dart';
 
 class NavigationScreen extends StatefulWidget {
   @override
