@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/add_figma/bar%20graph/bar_graph.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,8 +18,9 @@ class _HomePageState extends State<HomePage> {
     88.99,
     90.10,
   ];
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: SizedBox(
           height: 400,

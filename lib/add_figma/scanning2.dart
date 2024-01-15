@@ -51,7 +51,7 @@ class _CamerState extends State<Camer> {
           FloatingActionButton(
             onPressed: () => _getImage(ImageSource.gallery),
             tooltip: 'Open Gallery',
-            child: Icon(Icons.photo),
+            child: const Icon(Icons.photo),
           ),
         ],
       ),

@@ -22,7 +22,7 @@ class _NavigationExampleState extends State<MainPage> {
 );
   }
   int currentPageIndex = 0;
-  final List<Widget> _pages = [HomeView(), Car(), Qr(), SoundIndicatorScreen()];
+  final List<Widget> _pages = [const HomeView(), const Car(), const Qr(), const SoundIndicatorScreen()];
   @override
   void initState() {
     // TODO: implement initState

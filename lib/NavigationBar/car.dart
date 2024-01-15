@@ -1,8 +1,9 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
 class Car extends StatelessWidget {
+  const Car({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +11,7 @@ class Car extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.teal.shade400,
-        title: Text(
+        title: const Text(
           'Pesticide Robot',
           style: TextStyle(
               fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
@@ -34,7 +35,7 @@ class Car extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 80.0),
+          const SizedBox(height: 80.0),
           ElevatedButton(
             onPressed: () {
               print('OFF button pressed');
@@ -50,7 +51,7 @@ class Car extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 80.0,
           ),
           Row(
@@ -103,7 +104,7 @@ class ArrowButton extends StatelessWidget {
   final String imagePath;
   final VoidCallback onPressed;
 
-  ArrowButton({required this.imagePath, required this.onPressed});
+  const ArrowButton({super.key, required this.imagePath, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +126,7 @@ class StopButton extends StatelessWidget {
   final String imagePath;
   final VoidCallback onPressed;
 
-  StopButton({required this.imagePath, required this.onPressed});
+  const StopButton({super.key, required this.imagePath, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

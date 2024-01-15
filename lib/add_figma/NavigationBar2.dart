@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -22,17 +26,17 @@ class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    Page1(),
-    Page2(),
-    Page3(),
-    Page4(),
+    const Page1(),
+    const Page2(),
+    const Page3(),
+    const Page4(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Custom Navigation Bar Example'),
+        title: const Text('Custom Navigation Bar Example'),
       ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -42,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _currentIndex = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Page 1',
@@ -69,36 +73,44 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class Page1 extends StatelessWidget {
+  const Page1({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Page 1'),
     );
   }
 }
 
 class Page2 extends StatelessWidget {
+  const Page2({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Page 2'),
     );
   }
 }
 
 class Page3 extends StatelessWidget {
+  const Page3({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Page 3'),
     );
   }
 }
 
 class Page4 extends StatelessWidget {
+  const Page4({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Page 4'),
     );
   }

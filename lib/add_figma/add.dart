@@ -28,6 +28,7 @@ class _HomeViewState extends State<HomeView> {
             'They are devices used to measure the temperature of the soil or ground.',
         reading: 0)
   ];
+  @override
   Widget build(BuildContext context) {
     return const Placeholder();
   }

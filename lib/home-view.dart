@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/Scanning3.dart';
 import 'package:flutter_application_1/account_data.dart';
-import 'package:flutter_application_1/add_figma/scanning.dart';
-import 'package:flutter_application_1/add_figma/scanning2.dart';
 import 'package:flutter_application_1/sensor.dart';
 import 'package:flutter_application_1/showTimePicker%20function.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:tflite/tflite.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -82,7 +78,7 @@ class _HomeViewState extends State<HomeView> {
              // ignore: use_build_context_synchronously
              showModalBottomSheet(
               
-               context: context, builder: (context) => CameraGalleryPage(),);
+               context: context, builder: (context) => const CameraGalleryPage(),);
             // Navigator.of(context).push(
                 // MaterialPageRoute(builder: (context) => CameraGalleryPage()));
           },

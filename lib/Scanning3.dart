@@ -8,6 +8,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
 class CameraGalleryPage extends StatefulWidget {
+  const CameraGalleryPage({super.key});
+
   @override
   _CameraGalleryPageState createState() => _CameraGalleryPageState();
 }
@@ -55,7 +57,7 @@ class _CameraGalleryPageState extends State<CameraGalleryPage> {
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     )
-                  : Container(
+                  : SizedBox(
                     width: 250,
                     height: 200,
                     child: Image.file(_image!)),

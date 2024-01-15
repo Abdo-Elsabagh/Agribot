@@ -30,10 +30,10 @@ class NavigationExample extends StatefulWidget {
 class _NavigationExampleState extends State<NavigationExample> {
   int currentPageIndex = 0;
   final List<Widget> _pages = [
-    HomeView(),
-    Car(),
-    Qr(),
-    SoundIndicatorScreen()
+    const HomeView(),
+    const Car(),
+    const Qr(),
+    const SoundIndicatorScreen()
   ];
   @override
   Widget build(BuildContext context) {

@@ -2,19 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -24,14 +28,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Bar Chart Example'),
+        title: const Text('Flutter Bar Chart Example'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: BarChart(
           BarChartData(
-            gridData: FlGridData(show: false),
-            titlesData: FlTitlesData(show: false),
+            gridData: const FlGridData(show: false),
+            titlesData: const FlTitlesData(show: false),
             borderData: FlBorderData(
               show: true,
               border: Border.all(color: const Color(0xff37434d), width: 1),

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Scanning3.dart';
-import 'package:flutter_application_1/add_figma/Home.dart';
 import 'package:flutter_application_1/screens/login_in/login_view.dart';
-import 'package:flutter_application_1/test.dart';
 
 void main() {
   runApp(const MyApp());

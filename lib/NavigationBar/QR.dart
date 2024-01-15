@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class Qr extends StatelessWidget {
+  const Qr({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,7 +11,7 @@ class Qr extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.teal[400],
-        title: Text(
+        title: const Text(
           'GPS QR Code',
           style: TextStyle(
               fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
@@ -28,7 +30,7 @@ class Qr extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.grey[500],
           ),
-          child: Text(
+          child: const Text(
             'Scan QR',
             style: TextStyle(
               color: Colors.black,

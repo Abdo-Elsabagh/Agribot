@@ -13,6 +13,7 @@ class MyWidget extends StatelessWidget {
     88.99,
     90.10,
   ];
+  @override
   Widget build(BuildContext context) {
     return const Placeholder();
   }

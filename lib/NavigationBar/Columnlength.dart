@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class SoundIndicatorScreen extends StatefulWidget {
+  const SoundIndicatorScreen({super.key});
+
   @override
   _SoundIndicatorScreenState createState() => _SoundIndicatorScreenState();
 }
 
 class _SoundIndicatorScreenState extends State<SoundIndicatorScreen> {
   double _soundLevel = 0.0;
-  double _minValue = 0;
-  double _maxValue = 200;
+  final double _minValue = 0;
+  final double _maxValue = 200;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class _SoundIndicatorScreenState extends State<SoundIndicatorScreen> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.teal[400],
-        title: Text(
+        title: const Text(
           'Sound Indicator',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
@@ -35,16 +37,16 @@ class _SoundIndicatorScreenState extends State<SoundIndicatorScreen> {
               ],
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           SliderTheme(
             data: SliderThemeData(
               activeTrackColor: Colors.teal[400],
               inactiveTrackColor: Colors.grey,
               thumbColor: Colors.teal[400],
               overlayColor: Colors.blue.withOpacity(0.3),
-              thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10),
-              overlayShape: RoundSliderOverlayShape(overlayRadius: 20),
-              tickMarkShape: RoundSliderTickMarkShape(),
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10),
+              overlayShape: const RoundSliderOverlayShape(overlayRadius: 20),
+              tickMarkShape: const RoundSliderTickMarkShape(),
               showValueIndicator: ShowValueIndicator.always,
             ),
             child: Slider(

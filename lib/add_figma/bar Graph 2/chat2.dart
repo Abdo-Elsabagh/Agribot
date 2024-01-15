@@ -2,19 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -24,10 +28,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Pie Chart Example'),
+        title: const Text('Flutter Pie Chart Example'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: PieChart(
           PieChartData(
             sectionsSpace: 2,
@@ -38,40 +42,40 @@ class _MyHomePageState extends State<MyHomePage> {
                 value: 25,
                 title: '25%',
                 radius: 50,
-                titleStyle: TextStyle(
+                titleStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: const Color(0xffffffff)),
+                    color: Color(0xffffffff)),
               ),
               PieChartSectionData(
                 color: Colors.green,
                 value: 15,
                 title: '15%',
                 radius: 50,
-                titleStyle: TextStyle(
+                titleStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: const Color(0xffffffff)),
+                    color: Color(0xffffffff)),
               ),
               PieChartSectionData(
                 color: Colors.orange,
                 value: 30,
                 title: '30%',
                 radius: 50,
-                titleStyle: TextStyle(
+                titleStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: const Color(0xffffffff)),
+                    color: Color(0xffffffff)),
               ),
               PieChartSectionData(
                 color: Colors.red,
                 value: 30,
                 title: '40%',
                 radius: 50,
-                titleStyle: TextStyle(
+                titleStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: const Color(0xffffffff)),
+                    color: Color(0xffffffff)),
               ),
             ],
           ),
