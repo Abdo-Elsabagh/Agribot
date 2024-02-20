@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.obscureText, this.keyboardType, required this.label, required this.prefixIcon,  this.suffixIcon});
+  const CustomTextField(
+      {super.key,
+      required this.obscureText,
+      this.keyboardType,
+      required this.label,
+      required this.prefixIcon,
+      this.suffixIcon});
   final bool obscureText;
   final TextInputType? keyboardType;
   final String label;
@@ -9,20 +15,20 @@ class CustomTextField extends StatelessWidget {
   final IconData? suffixIcon;
   @override
   Widget build(BuildContext context) {
-    return  TextFormField(
-              obscureText: obscureText, //--
-              keyboardType: TextInputType.visiblePassword,//--
-              decoration: InputDecoration(
-                  // hintText: 'Enter y email',
-                  label:  Text(label),//
-                  prefixIcon:  Icon(prefixIcon),//
-                  suffixIcon: Icon(suffixIcon),//
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(color: Colors.black)),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(color: Colors.teal))),
-            );
+    return TextFormField(
+      obscureText: obscureText, //--
+      keyboardType: TextInputType.visiblePassword, //--
+      decoration: InputDecoration(
+          //hintText: 'Enter your email or Passward',
+          label: Text(label), //
+          prefixIcon: Icon(prefixIcon), //
+          suffixIcon: Icon(suffixIcon), //
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+              borderSide: const BorderSide(color: Colors.black)),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+              borderSide: const BorderSide(color: Colors.teal))),
+    );
   }
 }

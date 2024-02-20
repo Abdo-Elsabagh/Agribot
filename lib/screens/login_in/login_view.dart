@@ -14,6 +14,7 @@ class LoginViem extends StatefulWidget {
 }
 
 class _LoginViemState extends State<LoginViem> {
+  bool isVisable = true;
   @override
   Widget build(BuildContext context) {
     return  SafeArea(

@@ -10,7 +10,7 @@ class SoundIndicatorScreen extends StatefulWidget {
 class _SoundIndicatorScreenState extends State<SoundIndicatorScreen> {
   double _soundLevel = 0.0;
   final double _minValue = 0;
-  final double _maxValue = 200;
+  final double _maxValue = 45;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class _SoundIndicatorScreenState extends State<SoundIndicatorScreen> {
         centerTitle: true,
         backgroundColor: Colors.teal[400],
         title: const Text(
-          'Sound Indicator',
+          'Wether station',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
