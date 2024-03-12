@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Navigation%20Drawer/app_drawer.dart';
+import 'package:flutter_application_1/account_data.dart';
 
 class SoundIndicatorScreen extends StatefulWidget {
   const SoundIndicatorScreen({super.key});
@@ -23,7 +25,21 @@ class _SoundIndicatorScreenState extends State<SoundIndicatorScreen> {
           'Wether station',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const Account(),
+                ));
+              },
+              icon: const Icon(
+                Icons.account_circle_outlined,
+                size: 35,
+                color: Colors.white,
+              ))
+        ],
       ),
+      drawer: const AppDrawer(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

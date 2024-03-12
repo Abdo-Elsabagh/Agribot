@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/login_in/login_view.dart';
+import 'package:flutter_application_1/auth/login_view.dart';
 
 class Account extends StatelessWidget {
   const Account({super.key});
@@ -87,7 +87,7 @@ class Account extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => const LoginViem(),
+                      builder: (context) => const LoginViem2(),
                     ));
                   },
                   child: Center(

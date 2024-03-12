@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Navigation%20Drawer/app_drawer.dart';
+import 'package:flutter_application_1/account_data.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class Qr extends StatelessWidget {
@@ -16,7 +18,21 @@ class Qr extends StatelessWidget {
           style: TextStyle(
               fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const Account(),
+                ));
+              },
+              icon: const Icon(
+                Icons.account_circle_outlined,
+                size: 35,
+                color: Colors.white,
+              ))
+        ],
       ),
+      drawer: const AppDrawer(),
       body: Center(
         child: ElevatedButton(
           onPressed: () async {

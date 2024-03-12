@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Navigation%20Drawer/app_drawer.dart';
 import 'package:flutter_application_1/Scanning3.dart';
 import 'package:flutter_application_1/account_data.dart';
 import 'package:flutter_application_1/sensor.dart';
-import 'package:flutter_application_1/showTimePicker%20function.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeView extends StatefulWidget {
@@ -40,16 +40,6 @@ class _HomeViewState extends State<HomeView> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.teal[400],
-          leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const ShowTimePickerApp(),
-                  ));
-              },
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.white,
-              )),
           title: const Text(
             'sensor',
             style: TextStyle(
@@ -72,15 +62,16 @@ class _HomeViewState extends State<HomeView> {
                 ))
           ],
         ),
+        drawer:  const AppDrawer( ),
         floatingActionButton: FloatingActionButton(
-          onPressed: (){
-            
-             // ignore: use_build_context_synchronously
-             showModalBottomSheet(
-              
-               context: context, builder: (context) => const CameraGalleryPage(),);
+          onPressed: () {
+            // ignore: use_build_context_synchronously
+            showModalBottomSheet(
+              context: context,
+              builder: (context) => const CameraGalleryPage(),
+            );
             // Navigator.of(context).push(
-                // MaterialPageRoute(builder: (context) => CameraGalleryPage()));
+            // MaterialPageRoute(builder: (context) => CameraGalleryPage()));
           },
           child: const Icon(Icons.add),
         ),

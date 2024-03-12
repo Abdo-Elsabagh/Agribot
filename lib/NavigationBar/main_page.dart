@@ -15,9 +15,9 @@ class MainPage extends StatefulWidget {
 class _NavigationExampleState extends State<MainPage> {
    Future<void> loadModel ()async { // define the function that create the ai model
    await  Tflite.loadModel(
-    model:'assets/model_unquant.tflite',
+    model:'assets/model_unquant.tflite',///
     
-    labels: 'assets/labels.txt',
+    labels: 'assets/labels.txt',/// 
       
 );
   }

@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Navigation%20Drawer/app_drawer.dart';
+import 'package:flutter_application_1/account_data.dart';
 
 class Car extends StatelessWidget {
   const Car({super.key});
@@ -16,7 +17,21 @@ class Car extends StatelessWidget {
           style: TextStyle(
               fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const Account(),
+                ));
+              },
+              icon: const Icon(
+                Icons.account_circle_outlined,
+                size: 35,
+                color: Colors.white,
+              ))
+        ],
       ),
+      drawer: const AppDrawer(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -104,7 +119,8 @@ class ArrowButton extends StatelessWidget {
   final String imagePath;
   final VoidCallback onPressed;
 
-  const ArrowButton({super.key, required this.imagePath, required this.onPressed});
+  const ArrowButton(
+      {super.key, required this.imagePath, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +142,8 @@ class StopButton extends StatelessWidget {
   final String imagePath;
   final VoidCallback onPressed;
 
-  const StopButton({super.key, required this.imagePath, required this.onPressed});
+  const StopButton(
+      {super.key, required this.imagePath, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
