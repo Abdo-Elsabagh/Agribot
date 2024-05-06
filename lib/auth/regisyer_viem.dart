@@ -1,6 +1,9 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/NavigationBar/main_page.dart';
 import 'package:flutter_application_1/auth/login_view.dart';
+import 'package:flutter_application_1/core/models/register_model.dart';
 
 class RegisterView2 extends StatefulWidget {
   const RegisterView2({super.key});
@@ -12,11 +15,16 @@ class RegisterView2 extends StatefulWidget {
 class _RegisterViewState extends State<RegisterView2> {
   var formKey = GlobalKey<FormState>();
   bool isVisable = true;
+  String? usernamee;
+  String? email;
+  String? passwoord;
+  RegisterData? reguser;
+  bool isLoading=false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: SingleChildScrollView(
+            body: isLoading? const Center(child: CircularProgressIndicator(),): SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Center(
@@ -43,6 +51,9 @@ class _RegisterViewState extends State<RegisterView2> {
                 height: 30,
               ),
               TextFormField(
+                onChanged: (value) {
+                  usernamee =value;
+                },
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Name must not be empty!';
@@ -73,6 +84,9 @@ class _RegisterViewState extends State<RegisterView2> {
                 height: 15,
               ),
               TextFormField(
+                onChanged: (value) {
+                  email=value;
+                },
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Email must not be empty!';
@@ -102,6 +116,9 @@ class _RegisterViewState extends State<RegisterView2> {
                 height: 15,
               ),
               TextFormField(
+                onChanged: (value) {
+                  passwoord=value;
+                },
                 validator: (value) {
                   if (value!.isEmpty || value.length < 8) {
                     return 'Password must not be empty OR \nPassword must not length 8 ';
@@ -184,12 +201,80 @@ class _RegisterViewState extends State<RegisterView2> {
                     foregroundColor: Colors.white,
                     backgroundColor: Colors.teal[400], // لون النص
                   ),
-                  onPressed: () {
+                  onPressed: () async {
+
+
+
+
+
+                    // -----------------------------------------------------------------------------------------------
                     if (formKey.currentState!.validate()) {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => const MainPage()));
+                      setState(() {
+                          
+                        });
+                      try{
+                        isLoading=true;
+                        
+                           var response= await Dio().post('https://agribotapi.onrender.com/api/auth/local/register',
+                           data: {"username":usernamee.toString(),"email":email.toString(),"password":passwoord.toString()});
+                           if(response.statusCode == 200){
+                            reguser = RegisterData.fromjson(response.data);
+                            if (reguser!.token!.isNotEmpty){
+                             Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => const MainPage(),
+                      ));
+                            }
+
+                           }
+
+                          else{
+                            AwesomeDialog(context: context,dialogType: DialogType.error,title: 'Sorry',
+                            body: Text(response.data['error']['message'],),
+                            btnOk: ElevatedButton(
+                              style: ElevatedButton.styleFrom(backgroundColor: Colors.teal[400]),
+                              onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Ok'),)
+                            ).show();
+                          }
+                      }
+                      
+
+                      catch(e){
+                           AwesomeDialog(context: context,dialogType: DialogType.error,title: 'Sorry',
+                            body: const Text('Email or Username are already taken',),
+                            btnOk: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.teal[400]
+
+
+                              ),
+                              onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Ok',style: TextStyle(color: Colors.white),),)
+                            ).show();
+                      }
+                      isLoading=false;
+                      setState(() {
+                        
+                      });
+                   
+     
                     }
                   },
+                  //--------------------------------------------------------------------------------------------------------------
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
                   child: const Text('SignUp')),
               const SizedBox(
                 height: 15,

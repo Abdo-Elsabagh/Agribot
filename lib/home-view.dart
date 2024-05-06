@@ -1,7 +1,10 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Navigation%20Drawer/app_drawer.dart';
 import 'package:flutter_application_1/Scanning3.dart';
 import 'package:flutter_application_1/account_data.dart';
+import 'package:flutter_application_1/auth/sensors_model.dart';
 import 'package:flutter_application_1/sensor.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
@@ -13,28 +16,66 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  List? mydata;
+  SensorsModel? sensorsdata;
+  Future getdata() async {
+    var response =
+        await Dio().get('https://agribotapi.onrender.com/api/sensors');
+    mydata = response.data['data'];
+    sensorsdata = SensorsModel.fromjson(mydata![mydata!.length - 1]);
+
+    setState(() {});
+  }
+
   @override
+  void initState() {
+    // TODO: implement initState
+
+    try {
+      getdata();
+    } catch (e) {
+      AwesomeDialog(
+          context: context,
+          dialogType: DialogType.error,
+          title: 'Sorry',
+          body: const Text(
+            'Check your internet coonection',
+          ),
+          btnOk: ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.teal[400]),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text(
+              'Ok',
+              style: TextStyle(color: Colors.white),
+            ),
+          )).show();
+    }
+  }
+
   double percentage = 0.9;
-  List<Sensor> sensor = [
-    Sensor(
-        name: 'Ph sensor',
-        description:
-            'It is a miniature computer with standard credit card dimensions ',
-        reading: 0),
-    Sensor(
-        name: 'Soil moisture sensor',
-        description:
-            'It is a device for monitoring moisture levels in the soil',
-        reading: 0),
-    Sensor(
-        name: 'Soil temperature sensor',
-        description:
-            'They are devices used to measure the temperature of the soil or ground.',
-        reading: 0)
-  ];
 
   @override
   Widget build(BuildContext context) {
+    List<Sensor> sensor = [
+      Sensor(
+          name: 'Ph sensor',
+          description:
+              'It is a miniature computer with standard credit card dimensions ',
+          reading: sensorsdata == null ? 0 : sensorsdata!.ph),
+      Sensor(
+          name: 'Soil moisture sensor',
+          description:
+              'It is a device for monitoring moisture levels in the soil',
+          reading: sensorsdata == null ? 0 : sensorsdata!.humdity!.toInt()),
+      Sensor(
+          name: 'Soil temperature sensor',
+          description:
+              'They are devices used to measure the temperature of the soil or ground.',
+          reading: sensorsdata == null ? 0 : sensorsdata!.temp.toInt())
+    ];
+
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
@@ -59,10 +100,10 @@ class _HomeViewState extends State<HomeView> {
                   Icons.account_circle_outlined,
                   size: 35,
                   color: Colors.white,
-                ))
+                )),
           ],
         ),
-        drawer:  const AppDrawer( ),
+        drawer: const AppDrawer(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             // ignore: use_build_context_synchronously
@@ -115,9 +156,9 @@ class _HomeViewState extends State<HomeView> {
                                   radius: 140.0, // قطر الدائرة
                                   lineWidth:
                                       12.0, // عرض الخط الذي يحيط بالدائرة
-                                  percent: percentage, // النسبة المئوية
+                                  percent: 0, // النسبة المئوية
                                   center: Text(
-                                      "${(percentage * 100).toStringAsFixed(1)}%",
+                                      "${mydata == null ? 0 : sensorsdata!.ph.toDouble()}%",
                                       style: TextStyle(
                                           fontSize: 20.0,
                                           color: Colors.greenAccent.shade400)),
@@ -151,7 +192,9 @@ class _HomeViewState extends State<HomeView> {
                                           color: Colors.white, fontSize: 18),
                                     ),
                                     Text(
-                                      '73.1 F',
+                                      mydata == null
+                                          ? '0'
+                                          : sensorsdata!.temp.toString(),
                                       style: TextStyle(
                                           color: Colors.redAccent[400],
                                           fontSize: 18),
@@ -179,7 +222,9 @@ class _HomeViewState extends State<HomeView> {
                                           color: Colors.white, fontSize: 18),
                                     ),
                                     Text(
-                                      '45.8%',
+                                      mydata == null
+                                          ? '0'
+                                          : sensorsdata!.humdity.toString(),
                                       style: TextStyle(
                                           color: Colors.deepPurple[300],
                                           fontSize: 18),
@@ -207,7 +252,9 @@ class _HomeViewState extends State<HomeView> {
                                           color: Colors.white, fontSize: 18),
                                     ),
                                     Text(
-                                      '236.1',
+                                      mydata == null
+                                          ? '0'
+                                          : sensorsdata!.sunlight.toString(),
                                       style: TextStyle(
                                           color: Colors.amber[300],
                                           fontSize: 18),
@@ -239,7 +286,7 @@ class _HomeViewState extends State<HomeView> {
                   itemBuilder: (context, indexe) {
                     return Container(
                       alignment: Alignment.topLeft,
-                      height: 200,
+                      height: 220,
                       decoration: BoxDecoration(
                           color: Colors.teal[100],
                           borderRadius: BorderRadius.circular(40)),

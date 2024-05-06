@@ -35,6 +35,7 @@ class _NavigationExampleState extends State<MainPage> {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return Scaffold(
+      
       body: _pages[currentPageIndex],
       bottomNavigationBar: NavigationBar(
         backgroundColor: Colors.teal[400],

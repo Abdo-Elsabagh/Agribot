@@ -1,6 +1,9 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/NavigationBar/main_page.dart';
 import 'package:flutter_application_1/auth/regisyer_viem.dart';
+import 'package:flutter_application_1/core/models/log_in_model.dart';
 
 class LoginViem2 extends StatefulWidget {
   const LoginViem2({super.key});
@@ -12,11 +15,15 @@ class LoginViem2 extends StatefulWidget {
 class _LoginViemState extends State<LoginViem2> {
   var formKey = GlobalKey<FormState>();
   bool isVisable = true;
+  String? email;
+  String? password;
+  LogInData? userModel;
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: SingleChildScrollView(
+            body: isLoading?const Center(child: CircularProgressIndicator(),): SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Center(
@@ -43,6 +50,9 @@ class _LoginViemState extends State<LoginViem2> {
                 height: 30,
               ),
               TextFormField(
+                onChanged: (value) {
+                  email=value;
+                },
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Email must not be empty!';
@@ -72,6 +82,9 @@ class _LoginViemState extends State<LoginViem2> {
                 height: 20,
               ),
               TextFormField(
+                onChanged: (valuee) {
+                  password=valuee;
+                },
                 validator: (value) {
                   if (value!.isEmpty || value.length < 8) {
                     return 'Password must not be empty OR \nPassword must not length 8 ';
@@ -111,11 +124,79 @@ class _LoginViemState extends State<LoginViem2> {
                 height: 20,
               ),
               GestureDetector(
-                  onTap: () {
+                  onTap: () async{
+
+
+
+
+
+
+                    
+                //-------------------------------------------------------------------------------
                     if (formKey.currentState!.validate()) {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      setState(() {
+                          
+                        });
+                      try{
+                        isLoading=true;
+                        
+                           var response = await Dio().post('https://agribotapi.onrender.com/api/auth/local',
+                           data: {"identifier":email.toString(),"password":password.toString()});
+                           if(response.statusCode == 200){
+                            userModel = LogInData.fromjson(response.data);
+                            if (userModel!.token!.isNotEmpty){
+                             Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) => const MainPage(),
                       ));
+                            }
+
+                           }
+
+                          else{
+                            AwesomeDialog(context: context,dialogType: DialogType.error,title: 'Sorry',
+                            body: Text(response.data['error']['message'],),
+                            btnOk: ElevatedButton(
+                              style: ElevatedButton.styleFrom(backgroundColor: Colors.teal[400]),
+                              onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Ok'),)
+                            ).show();
+                          }
+                      }
+                      
+
+                      catch(e){
+                           AwesomeDialog(context: context,dialogType: DialogType.error,title: 'Sorry',
+                            body: const Text('Invalid Identifier or Password',),
+                            btnOk: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.teal[400]
+
+
+                              ),
+                              onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Ok',style: TextStyle(color: Colors.white),),)
+                            ).show();
+                      }
+                      isLoading=false;
+                      setState(() {
+                        
+                      });
+                   
+     
+        //--------------------------------------------------------------------------------------------------------
+                      
+
+
+
+
+
+
+
+
                     }
                   },
                   child: Container(

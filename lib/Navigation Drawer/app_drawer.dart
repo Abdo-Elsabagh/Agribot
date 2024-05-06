@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Navigation%20Drawer/aboustUs_viem.dart';
 import 'package:flutter_application_1/Navigation%20Drawer/help_view.dart';
 import 'package:flutter_application_1/NavigationBar/main_page.dart';
+import 'package:flutter_application_1/about_usPage/about_us_screen.dart';
 import 'package:flutter_application_1/auth/login_view.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -54,7 +54,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const AboutUs(),
+                builder: (context) => const AboutUsScreen(),
               ));
             },
             leading: const Icon(
