@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Navigation%20Drawer/help_view.dart';
+import 'package:flutter_application_1/Navigation%20Drawer/about_us_screen.dart';
+import 'package:flutter_application_1/Navigation%20Drawer/conect_me.dart';
+import 'package:flutter_application_1/Navigation%20Drawer/help_us_screen%20copy.dart';
 import 'package:flutter_application_1/NavigationBar/main_page.dart';
-import 'package:flutter_application_1/about_usPage/about_us_screen.dart';
 import 'package:flutter_application_1/auth/login_view.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -74,7 +75,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const Help(),
+                builder: (context) => const HelpUsScreen(),
               ));
             },
             leading: const Icon(
@@ -92,7 +93,11 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ConectMe(),
+              ));
+            },
             leading: const Icon(
               Icons.account_circle_rounded,
               size: 30,
