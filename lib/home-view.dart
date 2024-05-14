@@ -158,7 +158,7 @@ class _HomeViewState extends State<HomeView> {
                                       12.0, // عرض الخط الذي يحيط بالدائرة
                                   percent: 0, // النسبة المئوية
                                   center: Text(
-                                      "${mydata == null ? 0 : sensorsdata!.ph.toDouble()}%",
+                                      "${mydata == null ? 0 : sensorsdata!.ph.toDouble()}",
                                       style: TextStyle(
                                           fontSize: 20.0,
                                           color: Colors.greenAccent.shade400)),
