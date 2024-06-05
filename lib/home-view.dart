@@ -5,7 +5,6 @@ import 'package:flutter_application_1/Navigation%20Drawer/app_drawer.dart';
 import 'package:flutter_application_1/Scanning3.dart';
 import 'package:flutter_application_1/account_data.dart';
 import 'package:flutter_application_1/auth/sensors_model.dart';
-import 'package:flutter_application_1/sensor.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeView extends StatefulWidget {
@@ -58,24 +57,24 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    List<Sensor> sensor = [
-      Sensor(
-          name: 'Ph sensor',
-          description:
-              'It is a miniature computer with standard credit card dimensions ',
-          reading: sensorsdata!.ph ?? 0),
-      Sensor(
-          name: 'Soil moisture sensor',
-          description:
-              'It is a device for monitoring moisture levels in the soil',
-          reading:
-              sensorsdata!.humdity == null ? 0 : sensorsdata!.humdity!.toInt()),
-      Sensor(
-          name: 'Soil temperature sensor',
-          description:
-              'They are devices used to measure the temperature of the soil or ground.',
-          reading: sensorsdata!.temp == null ? 0 : sensorsdata!.temp.toInt())
-    ];
+    // List<Sensor> sensor = [
+    //   Sensor(
+    //       name: 'Ph sensor',
+    //       description:
+    //           'It is a miniature computer with standard credit card dimensions ',
+    //       reading: sensorsdata!.ph ?? 0),
+    //   Sensor(
+    //       name: 'Soil moisture sensor',
+    //       description:
+    //           'It is a device for monitoring moisture levels in the soil',
+    //       reading:
+    //           sensorsdata!.humdity == null ? 0 : sensorsdata!.humdity!.toInt()),
+    //   Sensor(
+    //       name: 'Soil temperature sensor',
+    //       description:
+    //           'They are devices used to measure the temperature of the soil or ground.',
+    //       reading: sensorsdata!.temp == null ? 0 : sensorsdata!.temp.toInt())
+    // ];
 
     return Scaffold(
         backgroundColor: Colors.black,
@@ -120,7 +119,7 @@ class _HomeViewState extends State<HomeView> {
         body: Column(
           children: [
             const Text(
-              'IOT  Monitoring',
+              'Soil Sensors ',
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -236,33 +235,33 @@ class _HomeViewState extends State<HomeView> {
                           const SizedBox(
                             height: 5,
                           ),
-                          Container(
-                            height: 65,
-                            width: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.grey[900],
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Center(
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Text(
-                                      'SUNLIGHT',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 18),
-                                    ),
-                                    Text(
-                                      mydata == null
-                                          ? '0'
-                                          : sensorsdata!.sunlight.toString(),
-                                      style: TextStyle(
-                                          color: Colors.amber[300],
-                                          fontSize: 18),
-                                    )
-                                  ]),
-                            ),
-                          ),
+                          // Container(
+                          //   height: 65,
+                          //   width: 200,
+                          //   decoration: BoxDecoration(
+                          //     color: Colors.grey[900],
+                          //     borderRadius: BorderRadius.circular(20),
+                          //   ),
+                          //   child: Center(
+                          //     child: Column(
+                          //         mainAxisAlignment: MainAxisAlignment.center,
+                          //         children: [
+                          //           const Text(
+                          //             'SUNLIGHT',
+                          //             style: TextStyle(
+                          //                 color: Colors.white, fontSize: 18),
+                          //           ),
+                          //           Text(
+                          //             mydata == null
+                          //                 ? '0'
+                          //                 : sensorsdata!.sunlight.toString(),
+                          //             style: TextStyle(
+                          //                 color: Colors.amber[300],
+                          //                 fontSize: 18),
+                          //           )
+                          //         ]),
+                          //   ),
+                          // ),
                         ],
                       ))
                     ]),
@@ -280,51 +279,180 @@ class _HomeViewState extends State<HomeView> {
             //   backgroundColor: Colors.white,
             //   progressColor: Colors.green,
             // ),
+            const Text(
+              'Weather Sensors ',
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
             Expanded(
-                child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListView.separated(
-                  itemBuilder: (context, indexe) {
-                    return Container(
-                      alignment: Alignment.topLeft,
-                      height: 220,
-                      decoration: BoxDecoration(
-                          color: Colors.teal[100],
-                          borderRadius: BorderRadius.circular(40)),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 15.0, left: 12),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Sensor : ${sensor[indexe].name}',
-                                style: const TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+              child: SizedBox(
+                child: ListView(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Row(children: [
+                        Expanded(
+                          child: Container(
+                              height: 250,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[900],
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Center(
+                                  child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'Rain',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  CircularPercentIndicator(
+                                    radius: 140.0, // قطر الدائرة
+                                    lineWidth:
+                                        12.0, // عرض الخط الذي يحيط بالدائرة
+                                    percent: 0, // النسبة المئوية
+                                    center: Text("0",
+                                        style: TextStyle(
+                                            fontSize: 20.0,
+                                            color:
+                                                Colors.greenAccent.shade400)),
+                                    circularStrokeCap: CircularStrokeCap.round,
+                                    backgroundColor: Colors.grey,
+                                    progressColor: Colors.greenAccent[400],
+                                  ),
+                                ],
+                              ))),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                            child: Column(
+                          children: [
+                            Container(
+                              height: 60,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[900],
+                                borderRadius: BorderRadius.circular(20),
                               ),
-                              Text(
-                                'description of Sensor : ${sensor[indexe].description}',
-                                style: const TextStyle(fontSize: 16),
+                              child: Center(
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Text(
+                                        'TEMPERATURE',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 18),
+                                      ),
+                                      Text(
+                                        '0',
+                                        style: TextStyle(
+                                            color: Colors.redAccent[400],
+                                            fontSize: 18),
+                                      )
+                                    ]),
                               ),
-                              const SizedBox(
-                                height: 10,
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              height: 60,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[900],
+                                borderRadius: BorderRadius.circular(20),
                               ),
-                              Center(
-                                child: Text(
-                                  'Sensor readers at the present time : ${sensor[indexe].reading}',
-                                  style: const TextStyle(fontSize: 18),
-                                ),
-                              )
-                            ]),
-                      ),
-                    );
-                  },
-                  separatorBuilder: (context, indexe) {
-                    return const SizedBox(
-                      height: 20,
-                    );
-                  },
-                  itemCount: sensor.length),
-            ))
+                              child: Center(
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Text(
+                                        'Humidity',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 18),
+                                      ),
+                                      Text(
+                                        '0',
+                                        style: TextStyle(
+                                            color: Colors.deepPurple[300],
+                                            fontSize: 18),
+                                      )
+                                    ]),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              height: 60,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[900],
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Center(
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Text(
+                                        'Wind speed',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 18),
+                                      ),
+                                      Text(
+                                        '0',
+                                        style: TextStyle(
+                                            color: Colors.amber[300],
+                                            fontSize: 18),
+                                      )
+                                    ]),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              height: 60,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[900],
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Center(
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Text(
+                                        'Wind direction',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 18),
+                                      ),
+                                      Text(
+                                        '0',
+                                        style: TextStyle(
+                                            color: Colors.amber[300],
+                                            fontSize: 18),
+                                      )
+                                    ]),
+                              ),
+                            ),
+                          ],
+                        ))
+                      ]),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ));
   }
