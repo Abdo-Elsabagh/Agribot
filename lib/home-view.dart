@@ -126,7 +126,7 @@ class _HomeViewState extends State<HomeView> {
                   color: Colors.white),
             ),
             SizedBox(
-              height: 225,
+              height: 205,
               child: ListView(
                 children: [
                   Padding(
@@ -176,7 +176,7 @@ class _HomeViewState extends State<HomeView> {
                           child: Column(
                         children: [
                           Container(
-                            height: 65,
+                            height: 80,
                             width: 200,
                             decoration: BoxDecoration(
                               color: Colors.grey[900],
@@ -187,7 +187,7 @@ class _HomeViewState extends State<HomeView> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Text(
-                                      'TEMPERATURE',
+                                      'TEMPERATURE Soil',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 18),
                                     ),
@@ -203,10 +203,10 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           const SizedBox(
-                            height: 5,
+                            height: 10,
                           ),
                           Container(
-                            height: 65,
+                            height: 80,
                             width: 200,
                             decoration: BoxDecoration(
                               color: Colors.grey[900],
@@ -286,6 +286,9 @@ class _HomeViewState extends State<HomeView> {
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             ),
+            const SizedBox(
+              height: 5,
+            ),
             Expanded(
               child: SizedBox(
                 child: ListView(
@@ -313,19 +316,92 @@ class _HomeViewState extends State<HomeView> {
                                   const SizedBox(
                                     height: 5,
                                   ),
-                                  CircularPercentIndicator(
-                                    radius: 140.0, // قطر الدائرة
-                                    lineWidth:
-                                        12.0, // عرض الخط الذي يحيط بالدائرة
-                                    percent: 0, // النسبة المئوية
-                                    center: Text("0",
-                                        style: TextStyle(
-                                            fontSize: 20.0,
-                                            color:
-                                                Colors.greenAccent.shade400)),
-                                    circularStrokeCap: CircularStrokeCap.round,
-                                    backgroundColor: Colors.grey,
-                                    progressColor: Colors.greenAccent[400],
+                                  Container(
+                                    height: 60,
+                                    width: 180,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            const Text(
+                                              'level 1',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18),
+                                            ),
+                                            Text(
+                                              '0',
+                                              style: TextStyle(
+                                                  color: Colors.redAccent[400],
+                                                  fontSize: 18),
+                                            )
+                                          ]),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Container(
+                                    height: 60,
+                                    width: 180,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            const Text(
+                                              'level 2',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18),
+                                            ),
+                                            Text(
+                                              '0',
+                                              style: TextStyle(
+                                                  color: Colors.redAccent[400],
+                                                  fontSize: 18),
+                                            )
+                                          ]),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Container(
+                                    height: 60,
+                                    width: 180,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            const Text(
+                                              'level 3',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18),
+                                            ),
+                                            Text(
+                                              '0',
+                                              style: TextStyle(
+                                                  color: Colors.redAccent[400],
+                                                  fontSize: 18),
+                                            )
+                                          ]),
+                                    ),
                                   ),
                                 ],
                               ))),
@@ -348,7 +424,7 @@ class _HomeViewState extends State<HomeView> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       const Text(
-                                        'TEMPERATURE',
+                                        'TEMPERATURE Air',
                                         style: TextStyle(
                                             color: Colors.white, fontSize: 18),
                                       ),
