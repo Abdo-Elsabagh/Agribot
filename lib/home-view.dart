@@ -126,7 +126,7 @@ class _HomeViewState extends State<HomeView> {
                   color: Colors.white),
             ),
             SizedBox(
-              height: 205,
+              height: 255,
               child: ListView(
                 children: [
                   Padding(
@@ -134,7 +134,7 @@ class _HomeViewState extends State<HomeView> {
                     child: Row(children: [
                       Expanded(
                         child: Container(
-                            height: 200,
+                            height: 250,
                             decoration: BoxDecoration(
                                 color: Colors.grey[900],
                                 borderRadius: BorderRadius.circular(20)),
@@ -176,7 +176,7 @@ class _HomeViewState extends State<HomeView> {
                           child: Column(
                         children: [
                           Container(
-                            height: 80,
+                            height: 60,
                             width: 200,
                             decoration: BoxDecoration(
                               color: Colors.grey[900],
@@ -194,7 +194,8 @@ class _HomeViewState extends State<HomeView> {
                                     Text(
                                       mydata == null
                                           ? '0'
-                                          : sensorsdata!.temp.toString(),
+                                          : sensorsdata!.temp
+                                              .toStringAsFixed(4),
                                       style: TextStyle(
                                           color: Colors.redAccent[400],
                                           fontSize: 18),
@@ -203,10 +204,10 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 5,
                           ),
                           Container(
-                            height: 80,
+                            height: 60,
                             width: 200,
                             decoration: BoxDecoration(
                               color: Colors.grey[900],
@@ -217,7 +218,7 @@ class _HomeViewState extends State<HomeView> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Text(
-                                      'moisture',
+                                      'moisture1',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 18),
                                     ),
@@ -234,6 +235,63 @@ class _HomeViewState extends State<HomeView> {
                           ),
                           const SizedBox(
                             height: 5,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[900],
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'moisture2',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                                    Text(
+                                      mydata == null
+                                          ? '0'
+                                          : sensorsdata!.humdity.toString(),
+                                      style: TextStyle(
+                                          color: Colors.deepPurple[300],
+                                          fontSize: 18),
+                                    )
+                                  ]),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            height: 60,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[900],
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'moisture3',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                                    Text(
+                                      mydata == null
+                                          ? '0'
+                                          : sensorsdata!.humdity.toString(),
+                                      style: TextStyle(
+                                          color: Colors.deepPurple[300],
+                                          fontSize: 18),
+                                    )
+                                  ]),
+                            ),
                           ),
                           // Container(
                           //   height: 65,
@@ -316,92 +374,19 @@ class _HomeViewState extends State<HomeView> {
                                   const SizedBox(
                                     height: 5,
                                   ),
-                                  Container(
-                                    height: 60,
-                                    width: 180,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Center(
-                                      child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            const Text(
-                                              'level 1',
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18),
-                                            ),
-                                            Text(
-                                              '0',
-                                              style: TextStyle(
-                                                  color: Colors.redAccent[400],
-                                                  fontSize: 18),
-                                            )
-                                          ]),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  Container(
-                                    height: 60,
-                                    width: 180,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Center(
-                                      child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            const Text(
-                                              'level 2',
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18),
-                                            ),
-                                            Text(
-                                              '0',
-                                              style: TextStyle(
-                                                  color: Colors.redAccent[400],
-                                                  fontSize: 18),
-                                            )
-                                          ]),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  Container(
-                                    height: 60,
-                                    width: 180,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Center(
-                                      child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            const Text(
-                                              'level 3',
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18),
-                                            ),
-                                            Text(
-                                              '0',
-                                              style: TextStyle(
-                                                  color: Colors.redAccent[400],
-                                                  fontSize: 18),
-                                            )
-                                          ]),
-                                    ),
+                                  CircularPercentIndicator(
+                                    radius: 140.0, // قطر الدائرة
+                                    lineWidth:
+                                        12.0, // عرض الخط الذي يحيط بالدائرة
+                                    percent: 0, // النسبة المئوية
+                                    center: Text("0",
+                                        style: TextStyle(
+                                            fontSize: 20.0,
+                                            color:
+                                                Colors.greenAccent.shade400)),
+                                    circularStrokeCap: CircularStrokeCap.round,
+                                    backgroundColor: Colors.grey,
+                                    progressColor: Colors.greenAccent[400],
                                   ),
                                 ],
                               ))),
