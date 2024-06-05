@@ -63,17 +63,18 @@ class _HomeViewState extends State<HomeView> {
           name: 'Ph sensor',
           description:
               'It is a miniature computer with standard credit card dimensions ',
-          reading: sensorsdata == null ? 0 : sensorsdata!.ph),
+          reading: sensorsdata!.ph ?? 0),
       Sensor(
           name: 'Soil moisture sensor',
           description:
               'It is a device for monitoring moisture levels in the soil',
-          reading: sensorsdata == null ? 0 : sensorsdata!.humdity!.toInt()),
+          reading:
+              sensorsdata!.humdity == null ? 0 : sensorsdata!.humdity!.toInt()),
       Sensor(
           name: 'Soil temperature sensor',
           description:
               'They are devices used to measure the temperature of the soil or ground.',
-          reading: sensorsdata == null ? 0 : sensorsdata!.temp.toInt())
+          reading: sensorsdata!.temp == null ? 0 : sensorsdata!.temp.toInt())
     ];
 
     return Scaffold(
@@ -81,7 +82,7 @@ class _HomeViewState extends State<HomeView> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.teal[400],
-          title: const Text(  
+          title: const Text(
             'sensor',
             style: TextStyle(
               fontSize: 25,
@@ -217,7 +218,7 @@ class _HomeViewState extends State<HomeView> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Text(
-                                      'HUMDITY',
+                                      'moisture',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 18),
                                     ),
