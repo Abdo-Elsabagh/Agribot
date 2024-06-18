@@ -7,7 +7,6 @@ class ConectMe extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade400,
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(

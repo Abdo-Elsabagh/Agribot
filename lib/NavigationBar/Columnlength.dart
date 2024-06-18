@@ -17,10 +17,8 @@ class _SoundIndicatorScreenState extends State<SoundIndicatorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[400],
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.teal[400],
         title: const Text(
           'Wether station',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),

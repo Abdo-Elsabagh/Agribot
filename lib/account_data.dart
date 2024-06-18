@@ -7,9 +7,7 @@ class Account extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[400],
       appBar: AppBar(
-        backgroundColor: Colors.teal[400],
         elevation: 0,
         centerTitle: true,
         title: const Text(

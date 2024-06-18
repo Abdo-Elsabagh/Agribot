@@ -8,10 +8,8 @@ class Car extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade400,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.teal.shade400,
         title: const Text(
           'Pesticide Robot',
           style: TextStyle(

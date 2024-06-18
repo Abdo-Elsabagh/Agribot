@@ -80,7 +80,6 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: Colors.black,
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.teal[400],
           title: const Text(
             'sensor',
             style: TextStyle(
