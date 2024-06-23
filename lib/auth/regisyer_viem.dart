@@ -67,27 +67,10 @@ class _RegisterViewState extends State<RegisterView2> {
                                 return null;
                               },
                               keyboardType: TextInputType.name,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 hintText: 'Enter your Name',
-                                label: const Text('Name'),
-                                prefixIcon: const Icon(Icons.email_rounded),
-                                focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide:
-                                        const BorderSide(color: Colors.black)),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                  borderSide:
-                                      const BorderSide(color: Colors.teal),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                    borderSide:
-                                        const BorderSide(color: Colors.red)),
-                                errorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                    borderSide:
-                                        const BorderSide(color: Colors.red)),
+                                label: Text('Name'),
+                                prefixIcon: Icon(Icons.email_rounded),
                               ),
                             ),
                             const SizedBox(
@@ -104,26 +87,10 @@ class _RegisterViewState extends State<RegisterView2> {
                                 return null;
                               },
                               keyboardType: TextInputType.emailAddress,
-                              decoration: InputDecoration(
-                                label: const Text('Email'),
+                              decoration: const InputDecoration(
+                                label: Text('Email'),
                                 hintText: 'Enter your Email',
-                                prefixIcon: const Icon(Icons.email),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.teal),
-                                    borderRadius: BorderRadius.circular(20)),
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide:
-                                        const BorderSide(color: Colors.black),
-                                    borderRadius: BorderRadius.circular(20)),
-                                focusedErrorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                    borderSide:
-                                        const BorderSide(color: Colors.red)),
-                                errorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                    borderSide:
-                                        const BorderSide(color: Colors.red)),
+                                prefixIcon: Icon(Icons.email),
                               ),
                             ),
                             const SizedBox(
@@ -154,22 +121,6 @@ class _RegisterViewState extends State<RegisterView2> {
                                     icon: Icon((isVisable)
                                         ? Icons.remove_red_eye
                                         : Icons.visibility_off_rounded)),
-                                focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide:
-                                        const BorderSide(color: Colors.black)),
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide:
-                                        const BorderSide(color: Colors.teal)),
-                                focusedErrorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                    borderSide:
-                                        const BorderSide(color: Colors.red)),
-                                errorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                    borderSide:
-                                        const BorderSide(color: Colors.red)),
                               ),
                             ),
                             const SizedBox(
@@ -197,22 +148,6 @@ class _RegisterViewState extends State<RegisterView2> {
                                     icon: Icon((isVisable)
                                         ? Icons.remove_red_eye
                                         : Icons.visibility_off_rounded)),
-                                focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide:
-                                        const BorderSide(color: Colors.black)),
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide:
-                                        const BorderSide(color: Colors.teal)),
-                                focusedErrorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                    borderSide:
-                                        const BorderSide(color: Colors.red)),
-                                errorBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                    borderSide:
-                                        const BorderSide(color: Colors.red)),
                               ),
                             ),
                             const SizedBox(
