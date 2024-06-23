@@ -13,37 +13,27 @@ class MainPage extends StatefulWidget {
 }
 
 class _NavigationExampleState extends State<MainPage> {
-  Future<void> loadModel() async {
-    // define the function that create the ai model
-    await Tflite.loadModel(
-      model: 'assets/model_unquant.tflite',
-
-      ///
-
-      labels: 'assets/labels.txt',
-
-      ///
-    );
+   Future<void> loadModel ()async { // define the function that create the ai model
+   await  Tflite.loadModel(
+    model:'assets/model_unquant.tflite',///
+    
+    labels: 'assets/labels.txt',/// 
+      
+);
   }
-
   int currentPageIndex = 0;
-  final List<Widget> _pages = [
-    const HomeView(),
-    const Car(),
-    const Qr(),
-    const SoundIndicatorScreen()
-  ];
+  final List<Widget> _pages = [const HomeView(), const Car(), const Qr(), const SoundIndicatorScreen()];
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    loadModel();
+  loadModel();
   }
-
+ 
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    return Scaffold(
+    return Scaffold(  
       body: _pages[currentPageIndex],
       bottomNavigationBar: NavigationBar(
         backgroundColor: Colors.teal[400],

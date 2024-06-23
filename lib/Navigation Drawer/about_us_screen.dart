@@ -27,7 +27,7 @@ class AboutUsScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            )   
           ],
         ),
       ),

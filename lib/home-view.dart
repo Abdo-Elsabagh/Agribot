@@ -28,6 +28,7 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   void initState() {
+    super.initState();
     // TODO: implement initState
 
     try {
@@ -157,7 +158,7 @@ class _HomeViewState extends State<HomeView> {
                                       12.0, // عرض الخط الذي يحيط بالدائرة
                                   percent: 0, // النسبة المئوية
                                   center: Text(
-                                      "${mydata == null ? 0 : sensorsdata!.ph.toDouble()}",
+                                      sensorsdata==null?'0':sensorsdata!.ph.toString(),
                                       style: TextStyle(
                                           fontSize: 20.0,
                                           color: Colors.greenAccent.shade400)),
@@ -191,13 +192,10 @@ class _HomeViewState extends State<HomeView> {
                                           color: Colors.white, fontSize: 18),
                                     ),
                                     Text(
-                                      mydata == null
-                                          ? '0'
-                                          : sensorsdata!.temp
-                                              .toStringAsFixed(4),
+                                      sensorsdata==null?'0':sensorsdata!.tempsoil.toString(),
                                       style: TextStyle(
                                           color: Colors.redAccent[400],
-                                          fontSize: 18),
+                                          fontSize: 10),
                                     )
                                   ]),
                             ),
@@ -222,12 +220,10 @@ class _HomeViewState extends State<HomeView> {
                                           color: Colors.white, fontSize: 18),
                                     ),
                                     Text(
-                                      mydata == null
-                                          ? '0'
-                                          : sensorsdata!.humdity.toString(),
+                                      sensorsdata==null?'0':sensorsdata!.mois1.toString(),
                                       style: TextStyle(
                                           color: Colors.deepPurple[300],
-                                          fontSize: 18),
+                                          fontSize: 10),
                                     )
                                   ]),
                             ),
@@ -252,12 +248,10 @@ class _HomeViewState extends State<HomeView> {
                                           color: Colors.white, fontSize: 18),
                                     ),
                                     Text(
-                                      mydata == null
-                                          ? '0'
-                                          : sensorsdata!.humdity.toString(),
+                                      sensorsdata==null?'0':sensorsdata!.mois2.toString(),
                                       style: TextStyle(
                                           color: Colors.deepPurple[300],
-                                          fontSize: 18),
+                                          fontSize: 10),
                                     )
                                   ]),
                             ),
@@ -282,12 +276,10 @@ class _HomeViewState extends State<HomeView> {
                                           color: Colors.white, fontSize: 18),
                                     ),
                                     Text(
-                                      mydata == null
-                                          ? '0'
-                                          : sensorsdata!.humdity.toString(),
+                                     sensorsdata==null?'0':sensorsdata!.mois3.toString(),
                                       style: TextStyle(
                                           color: Colors.deepPurple[300],
-                                          fontSize: 18),
+                                          fontSize: 10),
                                     )
                                   ]),
                             ),
@@ -378,11 +370,11 @@ class _HomeViewState extends State<HomeView> {
                                     lineWidth:
                                         12.0, // عرض الخط الذي يحيط بالدائرة
                                     percent: 0, // النسبة المئوية
-                                    center: Text("0",
+                                    center: Text(
+                                        sensorsdata==null?'0':sensorsdata!.rain.toString(),
                                         style: TextStyle(
-                                            fontSize: 20.0,
-                                            color:
-                                                Colors.greenAccent.shade400)),
+                                            fontSize: 10.0,
+                                            color: Colors.greenAccent.shade400)),
                                     circularStrokeCap: CircularStrokeCap.round,
                                     backgroundColor: Colors.grey,
                                     progressColor: Colors.greenAccent[400],
@@ -397,11 +389,11 @@ class _HomeViewState extends State<HomeView> {
                             child: Column(
                           children: [
                             Container(
-                              height: 60,
+                              height: 70,
                               width: 200,
                               decoration: BoxDecoration(
                                 color: Colors.grey[900],
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Center(
                                 child: Column(
@@ -413,10 +405,10 @@ class _HomeViewState extends State<HomeView> {
                                             color: Colors.white, fontSize: 18),
                                       ),
                                       Text(
-                                        '0',
+                                       sensorsdata==null?'0':sensorsdata!.tempair.toString(),
                                         style: TextStyle(
                                             color: Colors.redAccent[400],
-                                            fontSize: 18),
+                                            fontSize: 10),
                                       )
                                     ]),
                               ),
@@ -425,11 +417,11 @@ class _HomeViewState extends State<HomeView> {
                               height: 5,
                             ),
                             Container(
-                              height: 60,
+                              height: 70,
                               width: 200,
                               decoration: BoxDecoration(
                                 color: Colors.grey[900],
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Center(
                                 child: Column(
@@ -441,10 +433,10 @@ class _HomeViewState extends State<HomeView> {
                                             color: Colors.white, fontSize: 18),
                                       ),
                                       Text(
-                                        '0',
+                                        sensorsdata==null?'0':sensorsdata!.humdity.toString(),
                                         style: TextStyle(
                                             color: Colors.deepPurple[300],
-                                            fontSize: 18),
+                                            fontSize: 10),
                                       )
                                     ]),
                               ),
@@ -453,11 +445,11 @@ class _HomeViewState extends State<HomeView> {
                               height: 5,
                             ),
                             Container(
-                              height: 60,
+                              height: 70,
                               width: 200,
                               decoration: BoxDecoration(
                                 color: Colors.grey[900],
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Center(
                                 child: Column(
@@ -469,51 +461,145 @@ class _HomeViewState extends State<HomeView> {
                                             color: Colors.white, fontSize: 18),
                                       ),
                                       Text(
-                                        '0',
+                                        sensorsdata==null?'0':sensorsdata!.windspeed.toString(),
                                         style: TextStyle(
                                             color: Colors.amber[300],
-                                            fontSize: 18),
+                                            fontSize: 10),
                                       )
                                     ]),
                               ),
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Container(
-                              height: 60,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                color: Colors.grey[900],
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Center(
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      const Text(
-                                        'Wind direction',
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 18),
-                                      ),
-                                      Text(
-                                        '0',
-                                        style: TextStyle(
-                                            color: Colors.amber[300],
-                                            fontSize: 18),
-                                      )
-                                    ]),
-                              ),
-                            ),
+
                           ],
                         ))
                       ]),
-                    )
+                    ),
+                    const Text(
+                      'WITHER Directions ',
+                      style: TextStyle(
+                           fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+
+                 Padding(
+                   padding: const EdgeInsets.all(3.0),
+                   child: Row(
+                     children: [
+                       Expanded(child: Container(
+                         height: 80,
+                         decoration: BoxDecoration(
+                           color: Colors.grey[900],
+                           borderRadius: BorderRadius.circular(20)),
+
+                         child:  Center(
+                           child: Column(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                               const Text(
+                                 'Direction X',
+                                 style: TextStyle(
+                                   color: Colors.white, fontSize: 18),
+                               ),
+                               Text(sensorsdata==null?'0':sensorsdata!.windDix.toString(),
+
+                                 style: const TextStyle(color: Colors.lightBlue, fontSize: 10),
+                               )
+                             ],
+                           ),
+                         ),
+                       )),
+                       const SizedBox(
+                         width: 5,
+                       ),
+                       Expanded(
+                         child: Container(
+                             height: 80,
+                             decoration: BoxDecoration(
+                                 color: Colors.grey[900],
+                                 borderRadius: BorderRadius.circular(20)),
+                             child: Center(
+                                 child: Column(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   children: [
+                                     const Text(
+                                       'Direction Y',
+                                       style: TextStyle(
+                                           color: Colors.white, fontSize: 18),
+                                     ),
+                                     Text(
+                                       sensorsdata==null?'0':sensorsdata!.windDiy.toString(),
+                                       style: const TextStyle(
+                                           color: Colors.lightBlue, fontSize: 10),
+                                     ),
+                                   ],
+                                 ))),
+                       ),
+                       const SizedBox(
+                         width: 5,
+                       ),
+                       Expanded(
+                         child: Container(
+                             height: 80,
+                             decoration: BoxDecoration(
+                                 color: Colors.grey[900],
+                                 borderRadius: BorderRadius.circular(20)),
+                             child:  Center(
+                                 child: Column(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   children: [
+                                     const Text(
+                                       'Direction Z',
+                                       style: TextStyle(
+                                           color: Colors.white, fontSize: 18),
+                                     ),
+                                     Text(
+                                       sensorsdata==null?'0':sensorsdata!.windDiz.toString(),
+                                       style: const TextStyle(
+                                           color: Colors.lightBlue, fontSize: 10),
+                                     ),
+                                   ],
+                                 ))),
+                       ),
+                       const SizedBox(
+                         width: 5,
+                       ),
+                       Expanded(
+                         child: Container(
+                             height: 80,
+                             decoration: BoxDecoration(
+                                 color: Colors.black,
+                                 borderRadius: BorderRadius.circular(20)),
+                             child: const Center(
+                                 child: Column(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   children: [
+                                     Text(
+                                       ' ',
+                                       style: TextStyle(
+                                           color: Colors.white, fontSize: 1),
+                                     ),
+                                     Text(
+                                       ' ',
+                                       style: TextStyle(
+                                           color: Colors.lightBlue, fontSize: 1),
+                                     ),
+                                   ],
+                                 ))),
+                       ),
+                     ],
+                   )
+                 )
+
                   ],
                 ),
               ),
             ),
           ],
+
         ));
   }
 }

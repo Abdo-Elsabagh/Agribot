@@ -75,6 +75,19 @@ class _RegisterViewState extends State<RegisterView2> {
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide:
                                         const BorderSide(color: Colors.black)),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                  borderSide:
+                                      const BorderSide(color: Colors.teal),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red)),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red)),
                               ),
                             ),
                             const SizedBox(
@@ -91,10 +104,26 @@ class _RegisterViewState extends State<RegisterView2> {
                                 return null;
                               },
                               keyboardType: TextInputType.emailAddress,
-                              decoration: const InputDecoration(
-                                label: Text('Email'),
+                              decoration: InputDecoration(
+                                label: const Text('Email'),
                                 hintText: 'Enter your Email',
-                                prefixIcon: Icon(Icons.email),
+                                prefixIcon: const Icon(Icons.email),
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide:
+                                        const BorderSide(color: Colors.teal),
+                                    borderRadius: BorderRadius.circular(20)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide:
+                                        const BorderSide(color: Colors.black),
+                                    borderRadius: BorderRadius.circular(20)),
+                                focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red)),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red)),
                               ),
                             ),
                             const SizedBox(
@@ -125,6 +154,22 @@ class _RegisterViewState extends State<RegisterView2> {
                                     icon: Icon((isVisable)
                                         ? Icons.remove_red_eye
                                         : Icons.visibility_off_rounded)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide:
+                                        const BorderSide(color: Colors.black)),
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide:
+                                        const BorderSide(color: Colors.teal)),
+                                focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red)),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red)),
                               ),
                             ),
                             const SizedBox(
@@ -152,6 +197,22 @@ class _RegisterViewState extends State<RegisterView2> {
                                     icon: Icon((isVisable)
                                         ? Icons.remove_red_eye
                                         : Icons.visibility_off_rounded)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide:
+                                        const BorderSide(color: Colors.black)),
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(15),
+                                    borderSide:
+                                        const BorderSide(color: Colors.teal)),
+                                focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red)),
+                                errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide:
+                                        const BorderSide(color: Colors.red)),
                               ),
                             ),
                             const SizedBox(

@@ -75,8 +75,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const HelpUsScreen(),
-              ));
+                  builder: (context) => const HelpUsScreen()));
             },
             leading: const Icon(
               Icons.help,
